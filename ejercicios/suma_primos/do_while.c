@@ -4,7 +4,7 @@ int main() {
     int n, contador = 0, i = 2; // Declaración de variables
 
     // Mensaje para solicitar un número al usuario
-    printf("Ingresa un número: ");
+    printf("Ingresa un numero: ");
     scanf("%d", &n); // Leer el número ingresado por el usuario
 
     // Contar los números primos usando un bucle do-while
@@ -25,7 +25,7 @@ int main() {
     }
 
     // Imprimir el resultado
-    printf("Hay %d números primos hasta %d\n", contador, n);
+    printf("Hay %d numeros primos hasta %d\n", contador, n);
 
     return 0; // Indicar que el programa finalizó exitosamente
 }

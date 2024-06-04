@@ -5,7 +5,7 @@
 int main(){
     
     //Presentar la suma de los digitos de un numero
-    printf("===== Suma de Digitos ======="); 
+    printf("===== Suma de Digitos =======\n"); 
 
     //Definicion de variables
     int num = 0; // Variable para almacenar el número ingresado por el usuario.
@@ -13,7 +13,7 @@ int main(){
     int digit; // Variable para almacenar cada dígito extraído del número.
 
     //peticion e ingreso de valor de la variable num (Numero que se va a sumar)
-    printf("Ingrese un número: \n"); // Solicita al usuario que ingrese un número.
+    printf("Ingrese un numero: \n"); // Solicita al usuario que ingrese un número.
     scanf("%d", &num); // Lee el número ingresado por el usuario y lo almacena en la variable num.
 
     // Si el número ingresado es cero, la suma también será cero. De lo contrario, se realiza el cálculo.
@@ -28,7 +28,7 @@ int main(){
     }
 
     // Imprimir el resultado
-    printf("La suma de los dígitos es: %d\n", sum); // Imprime la suma de los dígitos.
+    printf("La suma de los digitos es: %d\n", sum); // Imprime la suma de los dígitos.
 
     return 0 ; // Indica que la función main ha terminado y que el programa se ejecutó correctamente.
 }

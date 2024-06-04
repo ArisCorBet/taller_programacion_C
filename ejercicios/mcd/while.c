@@ -4,7 +4,7 @@ int main() {
     int a, b, mcd, i = 1; // Declarar variables: a y b para los números ingresados, mcd para almacenar el máximo común divisor, e i como contador inicializado en 1
 
     // Mensaje para solicitar dos números al usuario
-    printf("Ingresa dos números: ");
+    printf("Ingresa dos numeros: ");
     scanf("%d %d", &a, &b); // Leer los dos números ingresados por el usuario y almacenarlos en las variables a y b
 
     // Encontrar el MCD usando un bucle while

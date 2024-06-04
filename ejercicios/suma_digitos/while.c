@@ -6,7 +6,7 @@ int main() {
     int cont; // Variable temporal para almacenar cada dígito extraído del número.
 
     //Peticion e ingreso de del valor de la variable num (numero que se a sumar)
-    printf("Ingrese un número:\n "); // Solicita al usuario que ingrese un número.
+    printf("Ingrese un numero:\n "); // Solicita al usuario que ingrese un número.
     scanf("%d", &num); // Lee el número ingresado por el usuario y lo almacena en la variable num.
 
     // Bucle while para extraer y sumar cada dígito del número.

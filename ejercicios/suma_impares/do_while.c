@@ -4,7 +4,7 @@ int main() { // Función principal del programa.
     int n, suma = 0, i = 1; // Declaración de variables: n para almacenar el número ingresado por el usuario, suma para almacenar la suma de los números impares, e i como un contador inicializado en 1.
 
     // Leer el valor de n
-    printf("Ingresa un número: "); // Solicita al usuario que ingrese un número.
+    printf("Ingresa un numero: "); // Solicita al usuario que ingrese un número.
     scanf("%d", &n); // Lee el número ingresado por el usuario y lo almacena en la variable n.
 
     // Sumar los números impares usando un bucle do while
@@ -14,7 +14,7 @@ int main() { // Función principal del programa.
     } while (i <= n); // Continúa el bucle mientras i sea menor o igual que n.
 
     // Imprimir el resultado
-    printf("La suma de los números impares hasta %d es: %d\n", n, suma); // Imprime la suma de los números impares hasta n.
+    printf("La suma de los numeros impares hasta %d es: %d\n", n, suma); // Imprime la suma de los números impares hasta n.
 
     return 0; // Indica que la función main ha terminado y que el programa se ejecutó correctamente.
 }

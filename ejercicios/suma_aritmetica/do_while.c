@@ -7,14 +7,19 @@ int main() {
     printf("Ingresa el número de términos: "); // Solicita al usuario que ingrese el número de términos.
     scanf("%d", &n); // Lee el número de términos ingresado por el usuario y lo almacena en la variable n.
 
-    // Calcular la suma de la serie aritmética usando un bucle do-while
+    // Mostrar la serie aritmética y calcular la suma usando un bucle do-while
+    printf("La serie es: "); // Imprime el encabezado de la serie.
     do {
+        printf("%d", i); // Imprime el valor actual de i.
+        if (i < n) {
+            printf(" + "); // Imprime el símbolo '+' entre los términos de la serie.
+        }
         suma += i; // Suma el valor de i a la variable suma.
         i++; // Incrementa el valor de i en 1 para pasar al siguiente término.
     } while (i <= n); // La condición del bucle: se ejecutará mientras i sea menor o igual que n.
 
     // Imprimir el resultado
-    printf("La suma de la serie es: %d\n", suma); // Imprime el resultado de la suma.
+    printf("\nLa suma de la serie es: %d\n", suma); // Imprime el resultado de la suma.
 
     return 0; // Indica que la función main ha terminado y que el programa se ejecutó correctamente.
 }

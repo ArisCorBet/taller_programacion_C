@@ -1,20 +1,35 @@
-#include <stdio.h> // Incluir la biblioteca estándar de entrada y salida
+#include <stdio.h>
 
 int main() {
-    int num, factorial = 1, i = 1; // Declarar variables: num para el número ingresado, factorial para almacenar el resultado del factorial, e i como contador inicializado en 1
+    int numero; // Variable para almacenar el número ingresado por el usuario
+    long long factorial = 1; // Variable para almacenar el resultado del factorial
 
-    // Mensaje para solicitar un número al usuario
-    printf("Ingresa un número: ");
-    scanf("%d", &num); // Leer el número ingresado por el usuario y almacenarlo en la variable num
+    // Solicita al usuario que ingrese un número
+    printf("Ingrese un numero: ");
+    scanf("%d", &numero); // Lee el número ingresado por el usuario y lo almacena en la variable 'numero'
 
-    // Calcular el factorial usando un bucle while
-    while (i <= num) { // Mientras i sea menor o igual que el número ingresado por el usuario
-        factorial *= i; // Multiplicar el valor actual de factorial por el valor actual de i y almacenar el resultado en factorial
-        i++; // Incrementar i en 1 para pasar al siguiente número en el cálculo del factorial
+    // Verifica que el número sea no negativo
+    if (numero < 0) {
+        printf("El factorial no esta definido para numeros negativos.\n");
+    } else {
+        // Muestra la serie de multiplicaciones
+        printf("%d! = ", numero);
+
+        int i = numero; // Variable de control del bucle
+
+        // Bucle while para calcular el factorial y mostrar la serie
+        while (i > 0) {
+            factorial *= i; // Multiplica el valor actual del factorial por 'i'
+            printf("%d", i); // Muestra el valor de 'i'
+            if (i > 1) {
+                printf(" * "); // Muestra el símbolo de multiplicación si no es el último número
+            }
+            i--; // Decrementa la variable de control
+        }
+
+        // Muestra el resultado del factorial
+        printf(" = %lld\n", factorial);
     }
 
-    // Imprimir el resultado del factorial
-    printf("El factorial de %d es: %d\n", num, factorial); // Imprimir el número ingresado y su factorial
-
-    return 0; // Indicar que el programa finalizó exitosamente
+    return 0; // Termina el programa
 }

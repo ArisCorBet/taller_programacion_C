@@ -1,20 +1,29 @@
 #include <stdio.h>
 
 int main() {
-    int n; // Declaración de la variable n que almacenará el número de términos.
-    float producto = 1.0; // Declaración e inicialización de la variable producto con 1.0, que almacenará el resultado del producto.
+    int n;  // Declara una variable para almacenar el valor de n
+    double producto = 1.0;  // Inicializa el producto en 1.0, tipo double para manejar decimales
 
-    // Leer el valor de n
-    printf("Ingresa un número: ");
-    scanf("%d", &n); // Leer el número ingresado por el usuario.
+    // Pide al usuario que ingrese el valor de n
+    printf("Ingrese el valor de n: ");
+    scanf("%d", &n);  // Lee el valor de n desde el teclado
 
-    // Calcular el producto de la serie fraccionaria usando un bucle for
-    for (int i = 1; i <= n; i++) { // Inicializar el contador i en 1; continuar el bucle mientras i sea menor o igual que n; incrementar i en cada iteración.
-        producto *= 1.0 / i; // Multiplicar el producto por 1/i en cada iteración, donde i es el valor actual del contador.
+    // Verifica que n sea mayor que 0
+    if (n <= 0) {
+        printf("El valor de n debe ser mayor que 0.\n");
+        return 1;  // Termina el programa si n no es válido
     }
 
-    // Imprimir el resultado del producto
-    printf("El producto de la serie es: %.6f\n", producto); // Imprimir el resultado del producto con 6 decimales de precisión.
+    // Ciclo for para calcular el producto de la serie
+    for (int i = 1; i <= n; i++) {
+        printf("1/%d ", i);  // Imprime el término actual en formato de fracción
+        if (i < n) {
+            printf("* ");  // Imprime un signo de multiplicación si no es el último término
+        }
+        producto *= 1.0 / i;  // Multiplica el término actual al producto acumulado
+    }
 
-    return 0; // Indicar que el programa ha finalizado con éxito.
+    printf("\nProducto de los primeros %d terminos: %f\n", n, producto);  // Imprime el producto total de la serie
+
+    return 0;
 }

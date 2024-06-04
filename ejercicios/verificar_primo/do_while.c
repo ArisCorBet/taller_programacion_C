@@ -6,7 +6,7 @@ int main() {
     int esPrimo = 1; // 1 para verdadero (es primo), 0 para falso (no es primo)
 
     // Leer el número
-    printf("Ingresa un número: ");
+    printf("Ingresa un numero: ");
     scanf("%d", &num);
 
     // Verificar si el número es primo usando un bucle do-while
@@ -24,9 +24,9 @@ int main() {
 
     // Imprimir el resultado
     if (esPrimo) {
-        printf("%d es un número primo\n", num);
+        printf("%d es un numero primo\n", num);
     } else {
-        printf("%d no es un número primo\n", num);
+        printf("%d no es un numero primo\n", num);
     }
 
     return 0;

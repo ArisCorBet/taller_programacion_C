@@ -1,22 +1,31 @@
 #include <stdio.h>
 
 int main() {
-    int n; // Declaración de la variable n que almacenará el número de términos.
-    int i = 1; // Inicialización del contador i en 1.
-    float producto = 1; // Declaración e inicialización de la variable producto con 1.0, que almacenará el resultado del producto.
+    int n;  // Declara una variable para almacenar el valor de n
+    double producto = 1.0;  // Inicializa el producto en 1.0, tipo double para manejar decimales
+    int i = 1;  // Inicializa el contador
 
-    // Leer el valor de n
-    printf("Ingresa un número: ");
-    scanf("%d", &n); // Leer el número ingresado por el usuario.
+    // Pide al usuario que ingrese el valor de n
+    printf("Ingrese el valor de n: ");
+    scanf("%d", &n);  // Lee el valor de n desde el teclado
 
-    // Calcular el producto de la serie fraccionaria usando un bucle while
-    while (i <= n) { // Iniciar un bucle while que continuará hasta que i sea menor o igual que n.
-        producto *= 1.0 / i; // Multiplicar el producto por 1/i en cada iteración, donde i es el valor actual del contador.
-        i++; // Incrementar el contador i en cada iteración.
+    // Verifica que n sea mayor que 0
+    if (n <= 0) {
+        printf("El valor de n debe ser mayor que 0.\n");
+        return 1;  // Termina el programa si n no es válido
     }
 
-    // Imprimir el resultado del producto
-    printf("El producto de la serie es: %.6f\n", producto); // Imprimir el resultado del producto con 6 decimales de precisión.
+    // Ciclo while para calcular el producto de la serie
+    while (i <= n) {
+        printf("1/%d ", i);  // Imprime el término actual en formato de fracción
+        if (i < n) {
+            printf("* ");  // Imprime un signo de multiplicación si no es el último término
+        }
+        producto *= 1.0 / i;  // Multiplica el término actual al producto acumulado
+        i++;  // Incrementa el contador
+    }
 
-    return 0; // Indicar que el programa ha finalizado con éxito.
+    printf("\nProducto de los primeros %d terminos: %f\n", n, producto);  // Imprime el producto total de la serie
+
+    return 0;
 }

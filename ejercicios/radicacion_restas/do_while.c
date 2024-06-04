@@ -1,23 +1,26 @@
 #include <stdio.h>
 
 int main() {
-    int num, raiz = 0, suma = 0; // Declaración de variables: num es el número ingresado, raiz almacenará el valor de la raíz cuadrada, suma llevará la suma acumulada de los números impares, inicializamos i en 0.
-    int i;
-    // Leer el número
-    printf("Ingresa un número: "); // Imprimir mensaje solicitando al usuario ingresar un número
-    scanf("%d", &num); // Leer el número ingresado por el usuario y almacenarlo en la variable num.
+    int numero; // Variable para almacenar el número ingresado por el usuario
+    int resultado = 0; // Variable para almacenar el resultado de la raíz cúbica
+    int acumulado = 0; // Variable para almacenar el acumulado de las sumas sucesivas
 
-    // Calcular la raíz cuadrada usando restas sucesivas con un bucle do while
+    // Solicita al usuario que ingrese un número
+    printf("Ingrese un numero: ");
+    scanf("%d", &numero); // Lee el número ingresado por el usuario y lo almacena en la variable 'numero'
+
+    int i = 1; // Variable de control del bucle
+
+    // Bucle 'do while' para calcular la raíz cúbica mediante restas sucesivas
     do {
-        suma += (2 * i + 1); // Sumar los números impares: i * 2 + 1 genera una secuencia de números impares. Sumamos estos números a la variable suma.
-        if (suma <= num) { // Comprobar si la suma acumulada es menor o igual al número original.
-            raiz++; // Incrementar raiz si la suma acumulada es menor o igual al número original, lo que indica que estamos dentro de los límites de la raíz cuadrada.
+        acumulado += (3 * resultado * resultado) + (3 * resultado) + 1; // Actualiza el acumulado con la fórmula
+        if (acumulado <= numero) { // Verifica si el acumulado no supera el número
+            resultado++; // Incrementa el resultado si la condición se cumple
         }
-        i++; // Incrementar el contador i para generar los números impares.
-    } while (suma <= num); // Repetir el ciclo mientras la suma acumulada sea menor o igual al número original.
+        i++; // Incrementa la variable de control
+    } while (acumulado < numero); // Condición para continuar el bucle
 
-    // Imprimir el resultado
-    printf("La raíz cuadrada aproximada es: %d\n", raiz); // Imprimir el valor aproximado de la raíz cuadrada.
-    
-    return 0; // Indicar que el programa ha finalizado con éxito.
+    // Imprime el resultado
+    printf("La raiz cubica de %d es %d\n", numero, resultado);
+    return 0; // Termina el programa
 }

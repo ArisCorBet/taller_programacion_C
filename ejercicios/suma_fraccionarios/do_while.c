@@ -1,21 +1,31 @@
-#include <stdio.h> // Incluye la biblioteca estándar de entrada y salida para usar las funciones printf y scanf.
+#include <stdio.h>
 
-int main() { // Función principal del programa.
-    int n, i = 1; // Declaración de variables: n para almacenar el número ingresado por el usuario, e i como un contador inicializado en 1.
-    float suma = 0.0; // Variable para almacenar la suma de la serie fraccionaria, inicializada en 0.0 para evitar errores de tipo en la operación.
+int main() {
+    int n;  // Declara una variable para almacenar el valor de n
+    double suma = 0.0;  // Inicializa la suma en 0.0, tipo double para manejar decimales
+    int i = 1;  // Inicializa el contador
 
-    // Leer el valor de n
-    printf("Ingresa un número: "); // Solicita al usuario que ingrese un número.
-    scanf("%d", &n); // Lee el número ingresado por el usuario y lo almacena en la variable n.
+    // Pide al usuario que ingrese el valor de n
+    printf("Ingrese el valor de n: ");
+    scanf("%d", &n);  // Lee el valor de n desde el teclado
 
-    // Calcular la suma de la serie fraccionaria usando un bucle do-while
-    do { // Inicia un bucle do-while. Se ejecutará al menos una vez, incluso si n es menor que 1.
-        suma += 1.0 / i; // Agrega el inverso de i a la variable suma.
-        i++; // Incrementa i en 1 en cada iteración.
-    } while (i <= n); // Continúa el bucle mientras i sea menor o igual que n.
+    // Verifica que n sea mayor que 0
+    if (n <= 0) {
+        printf("El valor de n debe ser mayor que 0.\n");
+        return 1;  // Termina el programa si n no es válido
+    }
 
-    // Imprimir el resultado
-    printf("La suma de la serie es: %.2f\n", suma); // Imprime la suma de la serie fraccionaria, con dos decimales de precisión.
+    // Ciclo do-while para calcular la suma de la serie
+    do {
+        printf("1/%d ", i);  // Imprime el término actual en formato de fracción
+        if (i < n) {
+            printf("+ ");  // Imprime un signo más si no es el último término
+        }
+        suma += 1.0 / i;  // Suma el término actual a la suma acumulada
+        i++;  // Incrementa el contador
+    } while (i <= n);  // Condición del bucle: se ejecuta mientras i sea menor o igual que n
 
-    return 0; // Indica que la función main ha terminado y que el programa se ejecutó correctamente.
+    printf("\nSuma de los primeros %d términos: %f\n", n, suma);  // Imprime la suma total de la serie
+
+    return 0;
 }
